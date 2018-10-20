@@ -13,6 +13,7 @@
 		BA7D6FB0217B926300C63F4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FAE217B926300C63F4E /* Main.storyboard */; };
 		BA7D6FB2217B926500C63F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FB1217B926500C63F4E /* Assets.xcassets */; };
 		BA7D6FB5217B926500C63F4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FB3217B926500C63F4E /* LaunchScreen.storyboard */; };
+		BA7D6FBD217B934C00C63F4E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FBC217B934C00C63F4E /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BA7D6FB1217B926500C63F4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA7D6FB4217B926500C63F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA7D6FB6217B926500C63F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA7D6FBC217B934C00C63F4E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BA7D6FB1217B926500C63F4E /* Assets.xcassets */,
 				BA7D6FB3217B926500C63F4E /* LaunchScreen.storyboard */,
 				BA7D6FB6217B926500C63F4E /* Info.plist */,
+				BA7D6FBC217B934C00C63F4E /* LoginController.swift */,
 			);
 			path = iOSSocialMediaApp;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA7D6FAD217B926300C63F4E /* SecondViewController.swift in Sources */,
+				BA7D6FBD217B934C00C63F4E /* LoginController.swift in Sources */,
 				BA7D6FA9217B926300C63F4E /* AppDelegate.swift in Sources */,
 				BA7D6FAB217B926300C63F4E /* FirstViewController.swift in Sources */,
 			);
