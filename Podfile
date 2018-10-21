@@ -10,5 +10,6 @@ target 'iOSSocialMediaApp' do
   pod 'AppCenter'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
 end
