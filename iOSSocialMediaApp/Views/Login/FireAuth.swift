@@ -10,16 +10,11 @@ import UIKit
 import Firebase
 
 class FireAuth {
-	func emailAuth(email: String, password: String, alert: @escaping (String) -> Void) {
+	func emailAuth(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
 		if (email != "" && password != "") {
 			Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
-				if let error = err {
-					alert("Error: [FireAuth] in emailAuth() - \(error)")
-					return
-				}
+				completion(authResult, err)
 			}
-		} else {
-			alert("Email and password field cannot be empty.")
 		}
 	}
 }
