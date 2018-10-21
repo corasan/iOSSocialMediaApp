@@ -13,6 +13,8 @@ class LoginController: UIViewController {
 	@IBOutlet weak var email: UITextField!
 	@IBOutlet weak var password: UITextField!
 	
+	let Auth = FireAuth()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -23,20 +25,18 @@ class LoginController: UIViewController {
 	@IBAction func loginBtn(_ sender: Any) {
 		let emailText = email.text!
 		let passwordText = password.text!
-		emailAuth(email: emailText, password: passwordText)
-	}
-	
-	private func emailAuth(email: String, password: String) {
-		if (email != "" && password != "") {
-			Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
-				if let error = err {
-					print("Error message: \(error)")
-					return
-				}
-				print("Logged in!")
-			}
-		} else {
-			print("Email and password field cannot be empty.")
+
+		Auth.emailAuth(email: emailText, password: passwordText) { (error) in
+			self.showAlert(message: error)
 		}
+	}
+}
+
+extension LoginController {
+	private func showAlert(message: String) {
+		let alert = UIAlertController(title: "Login", message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		
+		present(alert, animated: true)
 	}
 }
