@@ -16,7 +16,8 @@
 		BA7D6FB5217B926500C63F4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FB3217B926500C63F4E /* LaunchScreen.storyboard */; };
 		BA7D6FBD217B934C00C63F4E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FBC217B934C00C63F4E /* LoginController.swift */; };
 		BA7D6FBF217B957400C63F4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FBE217B957400C63F4E /* GoogleService-Info.plist */; };
-		BA8A255E217C29EF0088089E /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A255D217C29EF0088089E /* FireAuth.swift */; };
+		BA8A255E217C29EF0088089E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A255D217C29EF0088089E /* User.swift */; };
+		BA8A2562217E49710088089E /* Tweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A2561217E49710088089E /* Tweets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,8 @@
 		BA7D6FB6217B926500C63F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7D6FBC217B934C00C63F4E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BA7D6FBE217B957400C63F4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BA8A255D217C29EF0088089E /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
+		BA8A255D217C29EF0088089E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA8A2561217E49710088089E /* Tweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweets.swift; sourceTree = "<group>"; };
 		D1F8D45CCBEE45E33A438AFA /* Pods-iOSSocialMediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSocialMediaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSSocialMediaApp/Pods-iOSSocialMediaApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		BA7D6FA7217B926300C63F4E /* iOSSocialMediaApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A2560217E47220088089E /* Api */,
 				BA8A255B217C27940088089E /* Views */,
 				BA7D6FBE217B957400C63F4E /* GoogleService-Info.plist */,
 				BA7D6FA8217B926300C63F4E /* AppDelegate.swift */,
@@ -103,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				BA7D6FBC217B934C00C63F4E /* LoginController.swift */,
-				BA8A255D217C29EF0088089E /* FireAuth.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -114,6 +116,15 @@
 				BA7D6FAA217B926300C63F4E /* HomeController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BA8A2560217E47220088089E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				BA8A255D217C29EF0088089E /* User.swift */,
+				BA8A2561217E49710088089E /* Tweets.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		EE207E43EA8C5CEC818A88B1 /* Frameworks */ = {
@@ -265,11 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA8A255E217C29EF0088089E /* FireAuth.swift in Sources */,
+				BA8A255E217C29EF0088089E /* User.swift in Sources */,
 				BA7D6FAD217B926300C63F4E /* SecondViewController.swift in Sources */,
 				BA7D6FBD217B934C00C63F4E /* LoginController.swift in Sources */,
 				BA7D6FA9217B926300C63F4E /* AppDelegate.swift in Sources */,
 				BA7D6FAB217B926300C63F4E /* HomeController.swift in Sources */,
+				BA8A2562217E49710088089E /* Tweets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

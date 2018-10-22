@@ -10,12 +10,14 @@ import UIKit
 
 class HomeController: UIViewController {
 	@IBOutlet weak var tweetsTable: UITableView!
-	
+
 	var tweets: [String] = []
+	var tweetsDB = Tweets()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		tweets = tweetsDB.getTweets()
 	}
 }
 
@@ -26,7 +28,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //		let tweet = tweets[indexPath.row]
-		let cell = tweetsTable.dequeueReusableCell(withIdentifier: "TweetCell") as! UITableViewCell
+		let cell = tweetsTable.dequeueReusableCell(withIdentifier: "TweetCell")!
 		
 		return cell
 	}
