@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		387CB53A8054861FEA925981 /* Pods_iOSSocialMediaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7A0F861F98DE5DBBA4E097 /* Pods_iOSSocialMediaApp.framework */; };
 		BA7D6FA9217B926300C63F4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FA8217B926300C63F4E /* AppDelegate.swift */; };
-		BA7D6FAB217B926300C63F4E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FAA217B926300C63F4E /* FirstViewController.swift */; };
+		BA7D6FAB217B926300C63F4E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FAA217B926300C63F4E /* HomeController.swift */; };
 		BA7D6FAD217B926300C63F4E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FAC217B926300C63F4E /* SecondViewController.swift */; };
 		BA7D6FB0217B926300C63F4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FAE217B926300C63F4E /* Main.storyboard */; };
 		BA7D6FB2217B926500C63F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7D6FB1217B926500C63F4E /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		5D7A0F861F98DE5DBBA4E097 /* Pods_iOSSocialMediaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSSocialMediaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7D6FA5217B926300C63F4E /* iOSSocialMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSocialMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7D6FA8217B926300C63F4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA7D6FAA217B926300C63F4E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		BA7D6FAA217B926300C63F4E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BA7D6FAC217B926300C63F4E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BA7D6FAF217B926300C63F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA7D6FB1217B926500C63F4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,9 +92,9 @@
 		BA8A255B217C27940088089E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A255F217E439A0088089E /* Home */,
 				BA8A255C217C27C50088089E /* Login */,
 				BA7D6FAC217B926300C63F4E /* SecondViewController.swift */,
-				BA7D6FAA217B926300C63F4E /* FirstViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +106,14 @@
 				BA8A255D217C29EF0088089E /* FireAuth.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		BA8A255F217E439A0088089E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D6FAA217B926300C63F4E /* HomeController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EE207E43EA8C5CEC818A88B1 /* Frameworks */ = {
@@ -261,7 +269,7 @@
 				BA7D6FAD217B926300C63F4E /* SecondViewController.swift in Sources */,
 				BA7D6FBD217B934C00C63F4E /* LoginController.swift in Sources */,
 				BA7D6FA9217B926300C63F4E /* AppDelegate.swift in Sources */,
-				BA7D6FAB217B926300C63F4E /* FirstViewController.swift in Sources */,
+				BA7D6FAB217B926300C63F4E /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
