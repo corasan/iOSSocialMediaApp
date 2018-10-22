@@ -8,7 +8,7 @@
 
 import Firebase
 
-class User {
+class Users {
 	func emailAuth(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
 		if (email != "" && password != "") {
 			Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
