@@ -44,6 +44,7 @@ extension SignUpController {
 			}
 			guard let user = authResult?.user else { return }
 			print("User created: \(user)")
+			self.navigateToMainView()
 		}
 	}
 	
@@ -52,5 +53,15 @@ extension SignUpController {
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		
 		present(alert, animated: true)
+	}
+	
+	private func navigateToMainView() {
+		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		guard let mainNavigation = mainStoryBoard.instantiateViewController(withIdentifier: "MainView") as?
+			UITabBarController else {
+				return
+		}
+		
+		present(mainNavigation, animated: true, completion: nil)
 	}
 }
