@@ -11,19 +11,13 @@ import Firebase
 class Tweets {
 	var FS: Firestore!
 	var TweetsDB: CollectionReference!
-	var tweets: [String] = []
+	var tweets: [Tweet] = []
 	
 	init() {
 		let settings = FirestoreSettings()
 		Firestore.firestore().settings = settings
 		FS = Firestore.firestore()
 		TweetsDB = FS.collection("Tweets")
-		
-		listenForTweets()
-	}
-
-	func getTweets() -> [String] {
-		return tweets
 	}
 	
 	func createTweet(text: String, userId: String) {
@@ -33,14 +27,20 @@ class Tweets {
 		])
 	}
 	
-	private func listenForTweets() {
+	func listenForTweets(callback: @escaping ([Tweet]) -> Void) {
 		TweetsDB.addSnapshotListener { (querySnapshot, error) in
 			guard let documents = querySnapshot?.documents else {
 				print("Error: [Tweets] in listenForTweets() - \(error!)")
 				return
 			}
 			
-			self.tweets = documents.map { $0["text"] as! String }
+			self.tweets = documents.map { self.newTweet(text: $0["text"] as! String, userId: $0["user_id"] as! String) }
+			callback(self.tweets)
 		}
+	}
+	
+	private func newTweet(text: String, userId: String) -> Tweet {
+		let tweet = Tweet(text: text, userId: userId)
+		return tweet
 	}
 }

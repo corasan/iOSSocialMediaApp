@@ -13,7 +13,7 @@ class LoginController: UIViewController {
 	@IBOutlet weak var email: UITextField!
 	@IBOutlet weak var password: UITextField!
 	
-	let user = User()
+	let users = Users()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,7 +26,7 @@ class LoginController: UIViewController {
 		let emailText = email.text!
 		let passwordText = password.text!
 
-		user.emailAuth(email: emailText, password: passwordText) { (authResult, error) in
+		users.emailAuth(email: emailText, password: passwordText) { (authResult, error) in
 			if let error = error {
 				self.showAlert(title: "Login", message: "Error: [FireAuth] in emailAuth() - \(error)")
 				return
