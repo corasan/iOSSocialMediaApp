@@ -66,7 +66,6 @@
 		BA7D6F9C217B926300C63F4E = {
 			isa = PBXGroup;
 			children = (
-				BA8A2560217E47220088089E /* Api */,
 				BA7D6FA7217B926300C63F4E /* iOSSocialMediaApp */,
 				BA7D6FA6217B926300C63F4E /* Products */,
 				060569E2E09A098BEAFC32D2 /* Pods */,
@@ -85,7 +84,7 @@
 		BA7D6FA7217B926300C63F4E /* iOSSocialMediaApp */ = {
 			isa = PBXGroup;
 			children = (
-				BA8A255F217E439A0088089E /* Home */,
+				BA8A2560217E47220088089E /* Api */,
 				BA8A255B217C27940088089E /* Views */,
 				BA7D6FBE217B957400C63F4E /* GoogleService-Info.plist */,
 				BA7D6FA8217B926300C63F4E /* AppDelegate.swift */,
@@ -93,7 +92,6 @@
 				BA7D6FB1217B926500C63F4E /* Assets.xcassets */,
 				BA7D6FB3217B926500C63F4E /* LaunchScreen.storyboard */,
 				BA7D6FB6217B926500C63F4E /* Info.plist */,
-				BA7D6FAC217B926300C63F4E /* SecondViewController.swift */,
 			);
 			path = iOSSocialMediaApp;
 			sourceTree = "<group>";
@@ -101,6 +99,9 @@
 		BA8A255B217C27940088089E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A255F217E439A0088089E /* Home */,
+				BA8A255C217C27C50088089E /* Login */,
+				BA7D6FAC217B926300C63F4E /* SecondViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,7 +117,6 @@
 		BA8A255F217E439A0088089E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BA8A255C217C27C50088089E /* Login */,
 				BA7D6FAA217B926300C63F4E /* HomeController.swift */,
 				BA8A2563217E51900088089E /* TweetCell.swift */,
 				BA8A2565217E54660088089E /* Tweet.swift */,
