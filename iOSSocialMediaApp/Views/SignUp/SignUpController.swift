@@ -13,10 +13,12 @@ class SignUpController: UIViewController {
 	@IBOutlet weak var email: UITextField!
 	@IBOutlet weak var password: UITextField!
 	
+	var users: Users!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Do any additional setup after loading the view.
+		users = Users()
 	}
 	
 	@IBAction func backBtn(_ sender: Any) {
@@ -24,9 +26,31 @@ class SignUpController: UIViewController {
 	}
 
 	@IBAction func signUpBtn(_ sender: Any) {
+		signUp()
 	}
 }
 
 extension SignUpController {
+	private func signUp() {
+		let usernameText = self.username.text!
+		let emailText = self.email.text!
+		let passwordText = self.password.text!
+		
+		users.createUser(username: usernameText, email: emailText, password: passwordText) { (authResult, error) in
+			if let error = error {
+				print("Error: [FireAuth] in createUser() - \(error.localizedDescription)")
+				self.showAlert(title: "Sign Up", message: error.localizedDescription)
+				return
+			}
+			guard let user = authResult?.user else { return }
+			print("User created: \(user)")
+		}
+	}
 	
+	private func showAlert(title: String, message: String) {
+		let alert = UIAlertController(title: "Login", message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		
+		present(alert, animated: true)
+	}
 }

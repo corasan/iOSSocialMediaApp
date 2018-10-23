@@ -28,7 +28,8 @@ class LoginController: UIViewController {
 
 		users.emailAuth(email: emailText, password: passwordText) { (authResult, error) in
 			if let error = error {
-				self.showAlert(title: "Login", message: "Error: [FireAuth] in emailAuth() - \(error)")
+				print("Error: [FireAuth] in emailAuth() - \(error.localizedDescription)")
+				self.showAlert(title: "Login", message: error.localizedDescription)
 				return
 			}
 			self.navigateToMainView()
