@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		387CB53A8054861FEA925981 /* Pods_iOSSocialMediaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7A0F861F98DE5DBBA4E097 /* Pods_iOSSocialMediaApp.framework */; };
+		BA7C815B217FA04D00AB96F5 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C815A217FA04D00AB96F5 /* SignUpController.swift */; };
 		BA7D6FA9217B926300C63F4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FA8217B926300C63F4E /* AppDelegate.swift */; };
 		BA7D6FAB217B926300C63F4E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FAA217B926300C63F4E /* HomeController.swift */; };
 		BA7D6FAD217B926300C63F4E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7D6FAC217B926300C63F4E /* SecondViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		5C7E7DDCD49793C36CDFDF63 /* Pods-iOSSocialMediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSocialMediaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSSocialMediaApp/Pods-iOSSocialMediaApp.release.xcconfig"; sourceTree = "<group>"; };
 		5D7A0F861F98DE5DBBA4E097 /* Pods_iOSSocialMediaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSSocialMediaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7C815A217FA04D00AB96F5 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		BA7D6FA5217B926300C63F4E /* iOSSocialMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSocialMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7D6FA8217B926300C63F4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA7D6FAA217B926300C63F4E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA7C8159217FA01D00AB96F5 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				BA7C815A217FA04D00AB96F5 /* SignUpController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		BA7D6F9C217B926300C63F4E = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		BA8A255B217C27940088089E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA7C8159217FA01D00AB96F5 /* SignUp */,
 				BA8A255F217E439A0088089E /* Home */,
 				BA8A255C217C27C50088089E /* Login */,
 				BA7D6FAC217B926300C63F4E /* SecondViewController.swift */,
@@ -284,6 +295,7 @@
 			files = (
 				BA8A255E217C29EF0088089E /* Users.swift in Sources */,
 				BA8A2564217E51900088089E /* TweetCell.swift in Sources */,
+				BA7C815B217FA04D00AB96F5 /* SignUpController.swift in Sources */,
 				BA7D6FAD217B926300C63F4E /* SecondViewController.swift in Sources */,
 				BA7D6FBD217B934C00C63F4E /* LoginController.swift in Sources */,
 				BA7D6FA9217B926300C63F4E /* AppDelegate.swift in Sources */,
