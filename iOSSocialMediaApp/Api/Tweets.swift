@@ -12,12 +12,13 @@ class Tweets {
 	var FS: Firestore!
 	var TweetsDB: CollectionReference!
 	var tweets: [Tweet] = []
+	let user = Auth.auth().currentUser!
 	
 	init() {
 		let settings = FirestoreSettings()
 		Firestore.firestore().settings = settings
 		FS = Firestore.firestore()
-		TweetsDB = FS.collection("Tweets")
+		TweetsDB = FS.collection("users/\(user.uid)/tweets")
 	}
 	
 	func createTweet(text: String, userId: String) {
