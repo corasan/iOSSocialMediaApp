@@ -44,7 +44,6 @@ extension SignUpController {
 			}
 			guard let user = authResult?.user else { return }
 			print("User created: \(user)")
-			self.navigateToMainView()
 		}
 	}
 	

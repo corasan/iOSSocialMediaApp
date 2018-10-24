@@ -12,15 +12,15 @@ class HomeController: UIViewController {
 	@IBOutlet weak var tweetsTable: UITableView!
 
 	var tweets: [Tweet] = []
-	var tweetsDB: Tweets!
+	var TweetsDB: Tweets!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		tweetsTable.tableFooterView = UIView()
-		tweetsDB = Tweets()
+		TweetsDB = Tweets()
 
-		tweetsDB.listenForTweets { tweetsData in
+		TweetsDB.listenForTweets { tweetsData in
 			for i in tweetsData {
 				self.tweets.append(i)
 				self.updateTable()

@@ -11,7 +11,7 @@ import Firebase
 class Tweets {
 	var TweetsDB: CollectionReference!
 	var tweets: [Tweet] = []
-	let user = Auth.auth().currentUser!
+	let user = Global.currentUser!
 	
 	init() {
 		let FS = Global.FS!
@@ -20,10 +20,10 @@ class Tweets {
 		print("User: \(user)")
 	}
 	
-	func createTweet(text: String, userId: String) {
+	func createTweet(text: String) {
 		TweetsDB.addDocument(data: [
 			"text": text,
-			"user_id": userId
+			"user_id": user.uid
 		])
 	}
 	
@@ -34,13 +34,13 @@ class Tweets {
 				return
 			}
 			
-			self.tweets = documents.map { self.newTweet(text: $0["text"] as! String, userId: $0["user_id"] as! String) }
+			self.tweets = documents.map { self.newTweet(text: $0["text"] as! String) }
 			callback(self.tweets)
 		}
 	}
 	
-	private func newTweet(text: String, userId: String) -> Tweet {
-		let tweet = Tweet(text: text, userId: userId)
+	private func newTweet(text: String) -> Tweet {
+		let tweet = Tweet(text: text, userId: user.uid)
 		return tweet
 	}
 }

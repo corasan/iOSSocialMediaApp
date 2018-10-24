@@ -11,10 +11,11 @@ import Firebase
 class Users {
 	var user: User!
 	var UserRef: DocumentReference!
-	var FS: Firestore!
+	var UsersDB: CollectionReference!
 	
 	init() {
-		FS = Global.FS!
+		let FS = Global.FS!
+		UsersDB = FS.collection("users")
 	}
 
 	func createUser(username: String, email: String, password: String, completion: @escaping(AuthDataResult?, Error?) -> Void) {
@@ -62,6 +63,6 @@ class Users {
 	private func setUser(user: User) {
 		self.user = user
 		Global.currentUser = user
-		UserRef = FS.collection("users").document("\(user.uid)")
+		UserRef = UsersDB.document("\(user.uid)")
 	}
 }
