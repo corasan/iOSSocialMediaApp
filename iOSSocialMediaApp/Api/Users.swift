@@ -9,8 +9,6 @@
 import Firebase
 
 class Users {
-	var user: User!
-	var UserRef: DocumentReference!
 	var UsersDB: CollectionReference!
 	
 	init() {
@@ -20,24 +18,33 @@ class Users {
 
 	func createUser(username: String, email: String, password: String, completion: @escaping(AuthDataResult?, Error?) -> Void) {
 		Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-			if (authResult != nil) {
-				self.setUser(user: authResult!.user)
+			guard let authResult = authResult else {
+				print("Error: [Users] in createUser() - \(error!.localizedDescription)")
+				return
 			}
+			Global.currentUser = authResult.user
+
+			self.saveUserInDB(username: username, email: email, uid: authResult.user.uid)
 			completion(authResult, error)
 		}
 	}
 	
 	func emailAuth(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
-		Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
-			if (authResult != nil) {
-				Global.currentUser = authResult!.user
+		Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+			guard let authResult = authResult else {
+				print("Error: [Users] in emailAuth() - \(error!.localizedDescription)")
+				return
 			}
-			completion(authResult, err)
+
+			Global.currentUser = authResult.user
+			completion(authResult, error)
 		}
 	}
 	
 	func updateDisplayName(displayName: String, completion: @escaping () -> Void) {
-		UserRef.updateData(["display_name": displayName]) { err in
+		let user = Global.currentUser!
+
+		UsersDB.document(user.uid).updateData(["display_name": displayName]) { err in
 			if let err = err {
 				print("Error: [Users] in changeDisplayNameInDB() - \(err.localizedDescription)")
 			} else {
@@ -57,9 +64,13 @@ class Users {
 		}
 	}
 	
-	private func setUser(user: User) {
-		self.user = user
-		Global.currentUser = user
-		UserRef = UsersDB.document("\(user.uid)")
+	private func saveUserInDB(username: String, email: String, uid: String) {
+		let newUser = UsersDB.document(uid)
+		newUser.setData([
+			"username": username,
+			"email": email,
+			"display_name": "",
+			"user_id": uid
+		])
 	}
 }
