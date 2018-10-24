@@ -36,12 +36,13 @@ class Users {
 		}
 	}
 	
-	func updateDisplayName(displayName: String) {
+	func updateDisplayName(displayName: String, completion: @escaping () -> Void) {
 		UserRef.updateData(["display_name": displayName]) { err in
 			if let err = err {
 				print("Error: [Users] in changeDisplayNameInDB() - \(err.localizedDescription)")
 			} else {
 				self.updateProfileDisplayName(displayName: displayName)
+				completion()
 			}
 		}
 	}

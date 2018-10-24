@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0dd-aT-C2d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ixy-02-obH">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,7 +219,7 @@
         <!--Display Name-->
         <scene sceneID="bes-bg-brv">
             <objects>
-                <viewController storyboardIdentifier="SetDisplayNameView" title="Display Name" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ixy-02-obH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetDisplayNameView" title="Display Name" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ixy-02-obH" customClass="DisplayNameController" customModule="iOSSocialMediaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raP-hg-bdo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +234,7 @@
                                 <rect key="frame" x="64" y="329" width="247" height="50"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ab-UN-RcD">
                                 <rect key="frame" x="111" y="429" width="153" height="50"/>
@@ -245,6 +245,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="doneBtn:" destination="Ixy-02-obH" eventType="touchUpInside" id="GSB-SM-LCR"/>
                                     <action selector="loginBtn:" destination="0dd-aT-C2d" eventType="touchUpInside" id="aEu-pe-zRJ"/>
                                     <action selector="signUpBtn:" destination="I3z-pB-UtF" eventType="touchUpInside" id="EHL-QU-g83"/>
                                 </connections>
@@ -276,6 +277,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yyG-oX-T0k"/>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="PLE-V0-UOe" id="B6s-ju-2LD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux0-xF-yfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
