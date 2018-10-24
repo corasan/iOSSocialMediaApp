@@ -12,6 +12,11 @@ import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
 
+struct Global {
+	static var FS: Firestore!
+	static var currentUser: User?
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,12 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		FirebaseApp.configure()
 		MSAppCenter.start("c5126e70-a0fa-439e-af91-4621f2f0c5a0", withServices:[ MSAnalytics.self, MSCrashes.self ])
+		let settings = FirestoreSettings()
+		Firestore.firestore().settings = settings
+		Global.FS = Firestore.firestore()
 		
 		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
 		let mainViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MainView") as! UITabBarController
 		let user = Auth.auth().currentUser
 		
 		if user != nil {
+			Global.currentUser = user!
 			self.window!.rootViewController = mainViewController
 			self.window!.makeKeyAndVisible()
 		}

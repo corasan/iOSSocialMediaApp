@@ -15,10 +15,10 @@ class Tweets {
 	let user = Auth.auth().currentUser!
 	
 	init() {
-		let settings = FirestoreSettings()
-		Firestore.firestore().settings = settings
-		FS = Firestore.firestore()
+		FS = Global.FS
 		TweetsDB = FS.collection("users/\(user.uid)/tweets")
+		
+		print("User: \(user)")
 	}
 	
 	func createTweet(text: String, userId: String) {

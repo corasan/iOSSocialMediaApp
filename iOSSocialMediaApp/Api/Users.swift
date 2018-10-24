@@ -9,6 +9,12 @@
 import Firebase
 
 class Users {
+	var user: User?
+
+	init() {
+		user = Global.currentUser
+	}
+
 	func createUser(username: String, email: String, password: String, completion: @escaping(AuthDataResult?, Error?) -> Void) {
 		if (username != "" || email != "" || password != "") {
 			Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -22,6 +28,16 @@ class Users {
 		if (email != "" && password != "") {
 			Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
 				completion(authResult, err)
+			}
+		}
+	}
+	
+	func changeDisplayName(displayName: String) {
+		let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+		changeRequest?.displayName = displayName
+		changeRequest?.commitChanges { (error) in
+			if let error = error {
+				print("Error: [Users] in changeDisplayName() - \(error.localizedDescription)")
 			}
 		}
 	}

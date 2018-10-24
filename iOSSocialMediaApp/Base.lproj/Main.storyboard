@@ -63,6 +63,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="displayName" destination="RjD-hq-aev" id="U1K-7x-fDS"/>
                                             <outlet property="tweetText" destination="Nr4-ds-1gP" id="zEK-ub-pBR"/>
                                         </connections>
                                     </tableViewCell>
