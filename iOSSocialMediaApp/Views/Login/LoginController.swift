@@ -23,22 +23,30 @@ class LoginController: UIViewController {
 	
 	
 	@IBAction func loginBtn(_ sender: Any) {
-		let emailText = email.text!
-		let passwordText = password.text!
-
-		UsersDB.emailAuth(email: emailText, password: passwordText) { (authResult, error) in
-			if let error = error {
-				print("Error: [FireAuth] in emailAuth() - \(error.localizedDescription)")
-				self.showAlert(title: "Login", message: error.localizedDescription)
-				return
-			}
-			self.navigateToMainView()
-		}
+		login()
 	}
 }
 
 extension LoginController {
-	private func showAlert(title: String, message: String) {
+	private func login() {
+		let emailText = email.text!
+		let passwordText = password.text!
+		
+		if (emailText != "" && passwordText != "") {
+			UsersDB.emailAuth(email: emailText, password: passwordText) { (authResult, error) in
+				if let error = error {
+					print("Error: [FireAuth] in emailAuth() - \(error.localizedDescription)")
+					self.showAlert(message: error.localizedDescription)
+					return
+				}
+				self.navigateToMainView()
+			}
+		} else {
+			self.showAlert(message: "Text fields cannot be empty.")
+		}
+	}
+
+	private func showAlert(message: String) {
 		let alert = UIAlertController(title: "Login", message: message, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		

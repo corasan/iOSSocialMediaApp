@@ -22,7 +22,7 @@ class SignUpController: UIViewController {
 	}
 	
 	@IBAction func backBtn(_ sender: Any) {
-		self.dismiss(animated: true, completion: nil)
+		dismiss(animated: true, completion: nil)
 	}
 
 	@IBAction func signUpBtn(_ sender: Any) {
@@ -36,31 +36,33 @@ extension SignUpController {
 		let emailText = self.email.text!
 		let passwordText = self.password.text!
 		
-		users.createUser(username: usernameText, email: emailText, password: passwordText) { (authResult, error) in
-			if let error = error {
-				print("Error: [FireAuth] in createUser() - \(error.localizedDescription)")
-				self.showAlert(title: "Sign Up", message: error.localizedDescription)
-				return
+		if (usernameText != "" && emailText != "" && passwordText != "") {
+			users.createUser(username: usernameText, email: emailText, password: passwordText) { (authResult, error) in
+				guard let user = authResult?.user else {
+					print("Error: [FireAuth] in createUser() - \(error!.localizedDescription)")
+					self.showAlert(message: error!.localizedDescription)
+					return
+				}
+
+				print("User created: \(user)")
+				self.navigateToDisplayName()
 			}
-			guard let user = authResult?.user else { return }
-			print("User created: \(user)")
+		} else {
+			self.showAlert(message: "Text fields cannot be empty.")
 		}
 	}
 	
-	private func showAlert(title: String, message: String) {
-		let alert = UIAlertController(title: "Login", message: message, preferredStyle: .alert)
+	private func showAlert(message: String) {
+		let alert = UIAlertController(title: "Sign Up", message: message, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		
 		present(alert, animated: true)
 	}
 	
-	private func navigateToMainView() {
+	private func navigateToDisplayName() {
 		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let mainNavigation = mainStoryBoard.instantiateViewController(withIdentifier: "MainView") as?
-			UITabBarController else {
-				return
-		}
+		let displayNameNavigation = mainStoryBoard.instantiateViewController(withIdentifier: "SetDisplayNameView") as UIViewController
 		
-		present(mainNavigation, animated: true, completion: nil)
+		present(displayNameNavigation, animated: true, completion: nil)
 	}
 }

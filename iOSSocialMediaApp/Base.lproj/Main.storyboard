@@ -210,17 +210,16 @@
                         <outlet property="email" destination="atF-fp-E5z" id="ROm-UE-Pt3"/>
                         <outlet property="password" destination="BPd-NQ-clA" id="mnN-F0-Jxj"/>
                         <outlet property="username" destination="gJ5-vW-ZDl" id="jSI-W8-wRi"/>
-                        <segue destination="Ixy-02-obH" kind="show" id="MFg-Qc-Jeg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rne-yC-zdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1730" y="757"/>
         </scene>
-        <!--DisplayName-->
+        <!--Display Name-->
         <scene sceneID="bes-bg-brv">
             <objects>
-                <viewController storyboardIdentifier="SetDisplayNameView" title="DisplayName" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ixy-02-obH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetDisplayNameView" title="Display Name" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ixy-02-obH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raP-hg-bdo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
