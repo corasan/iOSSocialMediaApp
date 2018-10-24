@@ -22,6 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		FirebaseApp.configure()
 		MSAppCenter.start("c5126e70-a0fa-439e-af91-4621f2f0c5a0", withServices:[ MSAnalytics.self, MSCrashes.self ])
+		
+		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		let mainViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MainView") as! UITabBarController
+		let user = Auth.auth().currentUser
+		
+		if user != nil {
+			self.window!.rootViewController = mainViewController
+			self.window!.makeKeyAndVisible()
+		}
+
 		return true
 	}
 
