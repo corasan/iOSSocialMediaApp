@@ -9,13 +9,12 @@
 import Firebase
 
 class Tweets {
-	var FS: Firestore!
 	var TweetsDB: CollectionReference!
 	var tweets: [Tweet] = []
 	let user = Auth.auth().currentUser!
 	
 	init() {
-		FS = Global.FS
+		let FS = Global.FS!
 		TweetsDB = FS.collection("users/\(user.uid)/tweets")
 		
 		print("User: \(user)")

@@ -12,11 +12,6 @@ import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
 
-struct Global {
-	static var FS: Firestore!
-	static var currentUser: User?
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
