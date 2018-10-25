@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SecondViewController: UIViewController {
 
@@ -16,5 +17,20 @@ class SecondViewController: UIViewController {
 	}
 
 
+	@IBAction func logoutBtn(_ sender: Any) {
+		do {
+			try Auth.auth().signOut()
+			navigateToLogin()
+		} catch let error as NSError {
+			print("Error login out: %@", error)
+		}
+	}
+	
+	private func navigateToLogin() {
+		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		let authNavigation = mainStoryBoard.instantiateViewController(withIdentifier: "LoginView") as UIViewController
+		
+		present(authNavigation, animated: true, completion: nil)
+	}
 }
 

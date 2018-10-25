@@ -49,7 +49,6 @@ class Users {
 				print("Error: [Users] in changeDisplayNameInDB() - \(err.localizedDescription)")
 			} else {
 				self.updateProfileDisplayName(displayName: displayName)
-				Global.userDisplayName = displayName
 				completion()
 			}
 		}

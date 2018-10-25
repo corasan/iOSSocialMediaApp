@@ -39,7 +39,6 @@ extension LoginController {
 					self.showAlert(message: error.localizedDescription)
 					return
 				}
-				Global.userDisplayName = authResult!.user.displayName
 				self.navigateToMainView()
 			}
 		} else {
