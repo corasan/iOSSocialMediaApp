@@ -26,15 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Firestore.firestore().settings = settings
 		Global.FS = Firestore.firestore()
 		
-//		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//		let mainViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MainView") as! UITabBarController
-//		let user = Auth.auth().currentUser
-//		
-//		if user != nil {
-//			Global.currentUser = user!
-//			self.window!.rootViewController = mainViewController
-//			self.window!.makeKeyAndVisible()
-//		}
+		let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		let mainViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MainView") as! UITabBarController
+		let user = Auth.auth().currentUser
+
+		if user != nil {
+			Global.currentUser = user!
+			self.window!.rootViewController = mainViewController
+			self.window!.makeKeyAndVisible()
+		}
 
 		return true
 	}

@@ -11,4 +11,5 @@ import Firebase
 struct Global {
 	static var FS: Firestore!
 	static var currentUser: User?
+	static var userDisplayName: String!
 }

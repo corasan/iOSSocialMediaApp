@@ -17,6 +17,6 @@ class TweetCell: UITableViewCell {
 	
 	func setTweet(tweet: Tweet) {
 		tweetText.text = tweet.text
-		
+		displayName.text = Global.userDisplayName
 	}
 }
